@@ -36,24 +36,24 @@ const ActivityTable = () => {
   const items = activity.activityTable.activities;
 
   return (
-    <div className="w-full mb-24">
+    <div className="w-full mb-12 sm:mb-16 md:mb-20 lg:mb-24">
       {/* Header */}
-      <h2 className="mb-10 text-[#000000] font-roboto font-bold text-[34px] leading-[32px] capitalize">
+      <h2 className="mb-6 sm:mb-8 md:mb-10 text-[#000000] font-roboto font-bold text-2xl sm:text-3xl md:text-[34px] leading-7 sm:leading-8 md:leading-[32px] capitalize">
         Activity <span className="text-[#680099]">Table</span>
       </h2>
 
-      {/* Grid Layout */}
-      <div className="flex gap-3 items-stretch">
+      {/* Desktop Grid Layout */}
+      <div className="hidden lg:flex gap-2 md:gap-3 items-stretch">
         {/* City Column */}
-        <div className="w-[177px] flex flex-col">
-          <div className="bg-[#321E5D] text-[#FFFFFF] px-6 py-4 rounded-t-[45px] text-center font-roboto font-medium text-[26px] capitalize">
+        <div className="w-full max-w-[140px] lg:max-w-[177px] flex flex-col">
+          <div className="bg-[#321E5D] text-[#FFFFFF] px-3 sm:px-4 md:px-6 py-3 sm:py-4 rounded-t-2xl sm:rounded-t-3xl lg:rounded-t-[45px] text-center font-roboto font-medium text-lg sm:text-xl md:text-2xl lg:text-[26px] capitalize">
             City
           </div>
-          <div className="mt-2 flex-1">
+          <div className="mt-1 sm:mt-2 flex-1">
             {items.map((data) => (
               <div
                 key={data.id}
-                className={`last:rounded-b-[30px] flex items-center justify-center px-6 py-4 text-center text-[#000000] text-[20px] leading-[32px] capitalize font-light bg-[#F9EEFF]`}
+                className={`last:rounded-b-xl sm:last:rounded-b-2xl lg:last:rounded-b-[30px] flex items-center justify-center px-3 sm:px-4 md:px-6 py-3 sm:py-4 text-center text-[#000000] text-sm sm:text-base md:text-lg lg:text-[20px] leading-5 sm:leading-6 md:leading-7 lg:leading-[32px] capitalize font-light bg-[#F9EEFF]`}
               >
                 {data.city}
               </div>
@@ -62,15 +62,15 @@ const ActivityTable = () => {
         </div>
 
         {/* Activity Column */}
-        <div className="w-[523px] flex flex-col">
-          <div className="bg-[#321E5D] text-[#FFFFFF] px-6 py-4 rounded-t-[45px] text-center font-roboto font-medium text-[26px] capitalize">
+        <div className="w-full max-w-[300px] lg:max-w-[523px] flex flex-col">
+          <div className="bg-[#321E5D] text-[#FFFFFF] px-3 sm:px-4 md:px-6 py-3 sm:py-4 rounded-t-2xl sm:rounded-t-3xl lg:rounded-t-[45px] text-center font-roboto font-medium text-lg sm:text-xl md:text-2xl lg:text-[26px] capitalize">
             Activity
           </div>
-          <div className="mt-2 flex-1">
+          <div className="mt-1 sm:mt-2 flex-1">
             {items.map((data) => (
               <div
                 key={data.id}
-                className={`last:rounded-b-[30px] px-6 py-4 flex items-center justify-center text-center text-[#000000] text-[20px] leading-[32px] capitalize font-light bg-[#F9EEFF]`}
+                className={`last:rounded-b-xl sm:last:rounded-b-2xl lg:last:rounded-b-[30px] px-3 sm:px-4 md:px-6 py-3 sm:py-4 flex items-center justify-center text-center text-[#000000] text-sm sm:text-base md:text-lg lg:text-[20px] leading-5 sm:leading-6 md:leading-7 lg:leading-[32px] capitalize font-light bg-[#F9EEFF]`}
               >
                 {data.activity}
               </div>
@@ -79,16 +79,15 @@ const ActivityTable = () => {
         </div>
 
         {/* Type Column */}
-        <div className="w-[204px] flex flex-col">
-          <div className="bg-[#321E5D] text-[#FFFFFF] px-6 py-4 rounded-t-[45px] text-center font-roboto font-medium text-[26px] capitalize">
+        <div className="w-full max-w-[120px] lg:max-w-[204px] flex flex-col">
+          <div className="bg-[#321E5D] text-[#FFFFFF] px-3 sm:px-4 md:px-6 py-3 sm:py-4 rounded-t-2xl sm:rounded-t-3xl lg:rounded-t-[45px] text-center font-roboto font-medium text-lg sm:text-xl md:text-2xl lg:text-[26px] capitalize">
             Type
           </div>
-          <div className="mt-2 flex-1">
+          <div className="mt-1 sm:mt-2 flex-1">
             {items.map((data) => (
               <div
                 key={data.id}
-                className={`bg-[#F9EEFF] last:rounded-b-[30px] px-12 py-4 flex items-center justify-center text-center text-[#000000] text-[20px] leading-[32px] capitalize font-light"
-                }`}
+                className={`bg-[#F9EEFF] last:rounded-b-xl sm:last:rounded-b-2xl lg:last:rounded-b-[30px] px-3 sm:px-6 md:px-8 lg:px-12 py-3 sm:py-4 flex items-center justify-center text-center text-[#000000] text-sm sm:text-base md:text-lg lg:text-[20px] leading-5 sm:leading-6 md:leading-7 lg:leading-[32px] capitalize font-light`}
               >
                 {data.type}
               </div>
@@ -97,21 +96,50 @@ const ActivityTable = () => {
         </div>
 
         {/* Time Required Column */}
-        <div className="w-[251px] flex flex-col">
-          <div className="bg-[#321E5D] text-[#FFFFFF] px-6 py-4 rounded-t-[45px] text-center font-roboto font-medium text-[26px] capitalize">
+        <div className="w-full max-w-[150px] lg:max-w-[251px] flex flex-col">
+          <div className="bg-[#321E5D] text-[#FFFFFF] px-3 sm:px-4 md:px-6 py-3 sm:py-4 rounded-t-2xl sm:rounded-t-3xl lg:rounded-t-[45px] text-center font-roboto font-medium text-lg sm:text-xl md:text-2xl lg:text-[26px] capitalize">
             Time Required
           </div>
-          <div className="mt-2 flex-1">
+          <div className="mt-1 sm:mt-2 flex-1">
             {items.map((data) => (
               <div
                 key={data.id}
-                className={`bg-[#F9EEFF] px-6 py-4 flex items-center justify-center text-center text-[#000000] text-[20px] leading-[32px] capitalize font-light last:rounded-b-[30px]`}
+                className={`bg-[#F9EEFF] px-3 sm:px-4 md:px-6 py-3 sm:py-4 flex items-center justify-center text-center text-[#000000] text-sm sm:text-base md:text-lg lg:text-[20px] leading-5 sm:leading-6 md:leading-7 lg:leading-[32px] capitalize font-light last:rounded-b-xl sm:last:rounded-b-2xl lg:last:rounded-b-[30px]`}
               >
                 {data.timeRequired}
               </div>
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Mobile Card Layout */}
+      <div className="lg:hidden space-y-4">
+        {items.map((data) => (
+          <div
+            key={data.id}
+            className="bg-[#F9EEFF] rounded-2xl p-4 sm:p-6 shadow-sm"
+          >
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              <div className="col-span-2 sm:col-span-1">
+                <div className="text-[#321E5D] font-roboto font-medium text-sm sm:text-base mb-1">City</div>
+                <div className="text-[#000000] font-light text-sm sm:text-base">{data.city}</div>
+              </div>
+              <div className="col-span-2 sm:col-span-1">
+                <div className="text-[#321E5D] font-roboto font-medium text-sm sm:text-base mb-1">Time Required</div>
+                <div className="text-[#000000] font-light text-sm sm:text-base">{data.timeRequired}</div>
+              </div>
+              <div className="col-span-2">
+                <div className="text-[#321E5D] font-roboto font-medium text-sm sm:text-base mb-1">Activity</div>
+                <div className="text-[#000000] font-light text-sm sm:text-base">{data.activity}</div>
+              </div>
+              <div className="col-span-2">
+                <div className="text-[#321E5D] font-roboto font-medium text-sm sm:text-base mb-1">Type</div>
+                <div className="text-[#000000] font-light text-sm sm:text-base">{data.type}</div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -76,14 +76,14 @@ const ItineraryBuilder = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col p-6 mx-auto">
-      <h1 className="text-3xl font-semibold text-center mb-6">
+    <div className="min-h-screen bg-gray-50 flex flex-col p-4 sm:p-6 mx-auto">
+      <h1 className="text-2xl sm:text-3xl font-semibold text-center mb-4 sm:mb-6">
         Itinerary Builder
       </h1>
 
-      <div className="flex flex-col items-center">
-        {/* Forms  */}
-        <div className="w-full max-w-[600px] bg-[#FFFFFF] p-6 rounded-xl shadow-md space-y-6 mb-10">
+      <div className="flex flex-col items-center w-full">
+        {/* Forms Section - Responsive */}
+        <div className="w-full max-w-full lg:max-w-[600px] bg-[#FFFFFF] p-4 sm:p-6 rounded-xl shadow-md space-y-4 sm:space-y-6 mb-6 sm:mb-10">
           <TourOverviewForm
             overview={formData.overview}
             setOverview={(v) => setPart("overview", v)}
@@ -110,12 +110,14 @@ const ItineraryBuilder = () => {
           {/* <GeneratePDFButton targetId="pdf-preview" /> */}
         </div>
 
-        {/* PDF Preview */}
-        <div
-          id="pdf-preview"
-          className="bg-[#FFFFFF] w-[1300px] rounded-xl shadow-lg opacity-100 mx-auto"
-        >
-          <PdfPreview data={formData} />
+        {/* PDF Preview Section - Responsive */}
+        <div className="w-full max-w-full overflow-x-auto">
+          <div
+            id="pdf-preview"
+            className="bg-[#FFFFFF] w-full max-w-[1200px] lg:w-[1300px] rounded-xl shadow-lg opacity-100 mx-auto"
+          >
+            <PdfPreview data={formData} />
+          </div>
         </div>
       </div>
     </div>

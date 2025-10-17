@@ -7,24 +7,29 @@ import Utensils from "../assets/visa purple 1.png";
 
 const Header = ({overview}) => {
   return (
-    <div className="bg-gradient-to-r from-[#4BA1EB] to-[#936FE0] text-white text-center py-16 px-8 relative shadow-lg w-full h-[289px] rounded-[30px] flex flex-col items-center justify-center">
-      <h2 className="font-poppins font-medium text-[48px] leading-[32px] tracking-normal align-middle capitalize w-[224px] h-[32px] top-[245px] left-[579px] rotate-0 opacity-100">
+    <div className="bg-gradient-to-r from-[#4BA1EB] to-[#936FE0] text-white text-center py-8 sm:py-12 md:py-16 px-4 sm:px-6 md:px-8 relative shadow-lg w-full rounded-2xl sm:rounded-3xl flex flex-col items-center justify-center">
+      {/* Name */}
+      <h2 className="font-poppins font-medium text-2xl sm:text-3xl md:text-4xl lg:text-[48px] leading-tight sm:leading-8 md:leading-9 lg:leading-[32px] align-middle capitalize">
         Hi, {overview.name ? overview.name : "Rahul"}
       </h2>
-      <h1 className="mt-8 font-poppins font-semibold text-[48px] leading-[32px] tracking-normal align-middle capitalize w-[471px] h-[32px] top-[317px] left-[458px] rotate-0 opacity-100">
+      
+      {/* Main Title */}
+      <h1 className="mt-4 sm:mt-6 md:mt-8 font-poppins font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-[48px] leading-tight sm:leading-10 md:leading-[32px] align-middle capitalize max-w-full px-2 sm:px-0">
         {overview.title || "Singapore Itinerary"}
       </h1>
-      <p className="mt-6 font-poppins font-medium text-[34px] leading-[32px] tracking-normal align-middle capitalize w-[264px] h-[32px] top-[379px] left-[561px] rotate-0 opacity-100">
+      
+      {/* Duration */}
+      <p className="mt-4 sm:mt-5 md:mt-6 font-poppins font-medium text-xl sm:text-2xl md:text-3xl lg:text-[34px] leading-tight sm:leading-7 md:leading-8 lg:leading-[32px] align-middle capitalize">
         {overview.duration || "4 Days 3 Nights"}
       </p>
 
-      {/* icons row */}
-      <div className="flex justify-center gap-8 mt-8 text-white w-[230px] h-[32px] top-[438px] left-[579px] rotate-0 opacity-100">
-        <img src={Plane} size={28} strokeWidth={1.5} />
-        <img src={Building} size={28} strokeWidth={1.5} />
-        <img src={Globe} size={28} strokeWidth={1.5} />
-        <img src={Car} size={28} strokeWidth={1.5} />
-        <img src={Utensils} size={28} strokeWidth={1.5} />
+      {/* Icons Row */}
+      <div className="flex justify-center gap-4 sm:gap-6 md:gap-8 mt-4 sm:mt-6 md:mt-8 text-white">
+        <img src={Plane} alt="Flight" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+        <img src={Building} alt="Hotel" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+        <img src={Globe} alt="Globe" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+        <img src={Car} alt="Transport" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+        <img src={Utensils} alt="Visa" className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
       </div>
     </div>
   );

@@ -95,34 +95,44 @@ const PdfPreview = ({ data }) => {
   };
 
   return (
-    <div>
-      <div
-        ref={pdfRef}
-        className="text-gray-800 font-sans px-8 py-10 w-[1207px] mx-auto bg-white"
-        style={{
-          background: '#ffffff',
-          color: '#000000'
-        }}
-      >
-        <Header overview={overview} />
-        <TripDetails overview={overview} />
-        <DaysSection days={days} overview={overview} />
-        <FlightSummary />
-        <HotelBooking hotels={hotels} />
-        <ImportantNotes />
-        <ScopeService />
-        <InclusionSummary />
-        <ActivityTable />
-        <TermsAndConditions />
-        <PaymentPlan payments={payments} />
-        <VisaDetails />
-        <BookNowButton />
+    <div className="w-full">
+      {/* PDF Content - Responsive Container */}
+      <div className="w-full overflow-x-auto bg-gray-100 p-2 sm:p-4">
+        <div
+          ref={pdfRef}
+          className="text-gray-800 font-sans bg-white mx-auto"
+          style={{
+            background: '#ffffff',
+            color: '#000000',
+            width: '100%',
+            maxWidth: '1207px',
+            minWidth: '280px'
+          }}
+        >
+          {/* Responsive padding */}
+          <div className="px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
+            <Header overview={overview} />
+            <TripDetails overview={overview} />
+            <DaysSection days={days} overview={overview} />
+            <FlightSummary />
+            <HotelBooking hotels={hotels} />
+            <ImportantNotes />
+            <ScopeService />
+            <InclusionSummary />
+            <ActivityTable />
+            <TermsAndConditions />
+            <PaymentPlan payments={payments} />
+            <VisaDetails />
+            <BookNowButton />
+          </div>
+        </div>
       </div>
 
-      <div className="text-center mb-10">
+      {/* Download Button - Responsive */}
+      <div className="w-[240px] mx-auto text-center mt-6 sm:mt-8 md:mt-10">
         <button
           onClick={handleDownloadPDF}
-          className="cursor-pointer bg-purple-600 text-white px-8 py-3 rounded-lg text-sm font-medium shadow-md"
+          className="cursor-pointer bg-purple-600 text-white px-4 py-2 sm:px-6 sm:py-2 md:px-8 md:py-3 rounded-lg text-sm font-medium shadow-md hover:bg-purple-700 transition-colors duration-200 w-full max-w-xs sm:max-w-none"
         >
           Download Itinerary PDF
         </button>

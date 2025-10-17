@@ -44,40 +44,40 @@ const DayPlanner = ({ days, setDays }) => {
   };
 
   return (
-    <div className="bg-white p-4 rounded shadow-sm">
-      <div className="flex justify-between items-center mb-2">
-        <h3 className="font-semibold">Day Planner</h3>
+    <div className="bg-white p-3 sm:p-4 rounded shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0 mb-3 sm:mb-2">
+        <h3 className="font-semibold text-lg sm:text-xl">Day Planner</h3>
         <div>
           <button
             onClick={addDay}
-            className="text-sm px-3 py-1 bg-green-600 text-white rounded"
+            className="w-full sm:w-auto text-sm px-4 py-2 sm:px-3 sm:py-1 bg-green-600 text-white rounded hover:bg-green-700 transition-colors"
           >
             Add Day
           </button>
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {days.map((d) => (
-          <div key={d.id} className="border p-3 rounded">
-            <div className="flex justify-between items-center">
-              <div className="font-medium">Day {d.id}</div>
+          <div key={d.id} className="border p-3 sm:p-4 rounded">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 sm:gap-0">
+              <div className="font-medium text-base sm:text-lg">Day {d.id}</div>
               <button
                 onClick={() => removeDay(d.id)}
-                className="text-sm text-red-600"
+                className="text-sm text-red-600 hover:text-red-800 transition-colors w-full sm:w-auto text-left sm:text-center py-1 sm:py-0"
               >
                 Remove
               </button>
             </div>
 
-            <div className="grid grid-cols-1 gap-2 mt-2">
+            <div className="grid grid-cols-1 gap-2 sm:gap-3 mt-3 sm:mt-2">
               {/* Only Day 1 can set the starting arrival date */}
               {d.id === 1 && (
                 <input
                   type="date"
                   value={d.arrivalDate || ""}
                   onChange={(e) => updateDay1Date(e.target.value)}
-                  className="border p-2 rounded"
+                  className="border p-2 sm:p-2 rounded text-sm sm:text-base"
                   placeholder="Arrival Date"
                 />
               )}
@@ -86,25 +86,25 @@ const DayPlanner = ({ days, setDays }) => {
                 value={d.morning}
                 onChange={(e) => updateDay(d.id, "morning", e.target.value)}
                 placeholder="Morning activity"
-                className="border p-2 rounded"
+                className="border p-2 sm:p-2 rounded text-sm sm:text-base"
               />
               <input
                 value={d.afternoon}
                 onChange={(e) => updateDay(d.id, "afternoon", e.target.value)}
                 placeholder="Afternoon activity"
-                className="border p-2 rounded"
+                className="border p-2 sm:p-2 rounded text-sm sm:text-base"
               />
               <input
                 value={d.evening}
                 onChange={(e) => updateDay(d.id, "evening", e.target.value)}
                 placeholder="Evening activity"
-                className="border p-2 rounded"
+                className="border p-2 sm:p-2 rounded text-sm sm:text-base"
               />
               <input
                 value={d.transport}
                 onChange={(e) => updateDay(d.id, "transport", e.target.value)}
                 placeholder="Transport / flight details"
-                className="border p-2 rounded"
+                className="border p-2 sm:p-2 rounded text-sm sm:text-base"
               />
             </div>
           </div>
